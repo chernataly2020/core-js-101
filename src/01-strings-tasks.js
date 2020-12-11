@@ -30,7 +30,7 @@ function concatenateStrings(value1, value2) {
  * @return {number}
  *
  * @example
- *   'aaaaa' => 5
+ *   'aaaaa' => 5 
  *   'b'     => 1
  *   ''      => 0
  */
