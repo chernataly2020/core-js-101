@@ -122,8 +122,8 @@ function timeSpanToString(startDate, endDate) {
 function angleBetweenClockHands(date) {
     let minutes = date.getMinutes();
     let hours = date.getHours();
-    double hAngle = 0.5D * (h * 60 + m);
-    double mAngle = 6 * m;
+    double hAngle = 0.5D * (hours * 60 + minutes);
+    double mAngle = 6 * minutes;
     double angle = Math.abs(hAngle - mAngle);
     angle = Math.min(angle, 360 - angle);
     return angle;
