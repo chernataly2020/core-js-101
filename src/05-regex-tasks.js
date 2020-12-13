@@ -38,9 +38,8 @@
  * @return {RegExp}
  */
 function getRegexForGuid() {
-    return /\^[a-df]\d{8}[-][a-df]\d{4}[-][a-df]\d{4}[-][a-df]\d{4}[-][a-df]\d{12}$gim/;
+    return /^[0-9A-DFa-df]{8}(?:-[0-9A-DFa-df]{4}){3}-[0-9A-DFa-df]{12}$/;
 }
-
 
 /**
  * Returns the regexp that matches all the strings from first column
@@ -85,7 +84,7 @@ function getRegexForPitSpot() {
  *   'Pa55'.match(validator) => false
  */
 function getPasswordValidator(_minLength = 6) {
-    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,}$/;
+    return /(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,}$/;
 }
 
 module.exports = {

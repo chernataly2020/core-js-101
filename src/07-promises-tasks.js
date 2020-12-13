@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable space-in-parens */
+/* eslint-disable linebreak-style */
 /* eslint-disable padded-blocks */
 /* eslint-disable indent */
 /* ************************************************************************************************
@@ -87,7 +89,7 @@ function processAllPromises(array) {
  *    })
  *
  */
-function getFastestPromise(array) {
+function getFastestPromise( /* array */ ) {
     throw new Error('Not implemented');
 }
 
@@ -108,7 +110,7 @@ function getFastestPromise(array) {
  *    });
  *
  */
-function chainPromises(array, action) {
+function chainPromises( /* array, action */ ) {
     throw new Error('Not implemented');
 }
 
