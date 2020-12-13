@@ -1,3 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable operator-linebreak */
+/* eslint-disable max-len */
+/* eslint-disable no-else-return */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
 /* *************************************************************************************************
  *                                                                                                *
  * Plese read the following tutorial before implementing tasks:                                   *
@@ -55,7 +61,7 @@ function getFizzBuzz(num) {
  */
 function getFactorial(n) {
     let result = 1;
-    for (let i = 1; i <= n; i++) {
+    for (let i = 1; i <= n; i += 1) {
         result *= i;
     }
     return result;
@@ -76,7 +82,7 @@ function getFactorial(n) {
  */
 function getSumBetweenNumbers(n1, n2) {
     let result = 0;
-    for (let i = n1; i <= n2; i++) {
+    for (let i = n1; i <= n2; i += 1) {
         result += i;
     }
     return result;
@@ -99,15 +105,13 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-    //Неравенство трецгольника
+    // Неравенство трецгольника
     if ((a + b > c) || (a + c > b) || (b + c > a)) {
         return true;
+    } else if ((a <= 0) || (b <= 0) || (c <= 0)) {
+        return false;
     } else {
-        if ((a <= 0) || (b <= 0) || (c <= 0)) {
-            return false;
-        } else {
-            return false;
-        }
+        return false;
     }
 }
 
@@ -181,13 +185,12 @@ function doRectanglesOverlap(rect1, rect2) {
  *
  */
 function isInsideCircle(circle, point) {
-    var dist_points = Math.sqrt((circle.x - point.x) * (circle.x - point.x) + (circle.y - point.y) * (circle.y - point.y));
-    if (dist_points < circle.radius) {
+    const distPpoints = Math.sqrt((circle.x - point.x) * (circle.x - point.x) + (circle.y - point.y) * (circle.y - point.y));
+    if (distPpoints < circle.radius) {
         return true;
     }
     return false;
 }
-
 
 /**
  * Returns the first non repeated char in the specified strings otherwise returns null.
@@ -203,7 +206,6 @@ function isInsideCircle(circle, point) {
 function findFirstSingleChar(str) {
     return str.split('').filter((char, _, arr) => arr.indexOf(char) === arr.lastIndexOf(char)).shift();
 }
-
 
 /**
  * Returns the string representation of math interval,
@@ -240,7 +242,6 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
     return a > b ? `${start}${b}, ${a}${end}` : `${start}${a}, ${b}${end}`;
 }
 
-
 /**
  * Reverse the specified string (put all chars in reverse order)
  *
@@ -257,7 +258,6 @@ function reverseString(str) {
     return str.split('').reverse().join('');
 }
 
-
 /**
  * Reverse the specified integer number (put all digits in reverse order)
  *
@@ -273,7 +273,6 @@ function reverseString(str) {
 function reverseInteger(num) {
     return +num.toString().split('').reverse().join('');
 }
-
 
 /**
  * Validates the CCN (credit card number) and return true if CCN is valid
@@ -299,9 +298,7 @@ function isCreditCardNumber(ccn) {
     let result;
     let arr = ccn.toString().split('').reverse().map((elem, index) => {
         if (index % 2 === 1) {
-            result = elem * 2 < 10 ?
-                elem * 2 :
-                (elem * 2 - ((elem * 2) % 10)) / 10 + ((elem * 2) % 10);
+            result = elem * 2 < 10 ? elem * 2 : (elem * 2 - ((elem * 2) % 10)) / 10 + ((elem * 2) % 10);
         } else {
             result = +elem;
         }
@@ -416,6 +413,7 @@ function toNaryString(num, n) {
  *   ['/web/favicon.ico', '/web-scripts/dump', '/webalizer/logs'] => '/'
  */
 function getCommonDirectoryPath(pathes) {
+    const isFirstCharEmpty = pathes.some((path) => path[0] !== '/');
     if (isFirstCharEmpty) {
         return '';
     }
@@ -513,12 +511,7 @@ function getMatrixProduct(m1, m2) {
 function evaluateTicTacToePosition(position) {
     let result;
     if (
-        ((position[0][0] === position[1][1] &&
-                position[0][0] === position[2][2]) ||
-            (position[0][2] === position[1][1] &&
-                position[0][2] === position[2][0])) &&
-        position[1][1] !== undefined
-    ) {
+        ((position[0][0] === position[1][1] && position[0][0] === position[2][2]) || (position[0][2] === position[1][1] && position[0][2] === position[2][0])) && position[1][1] !== undefined) {
         [, [, result]] = position;
     } else if (
         ((position[0][0] === position[0][1] &&
@@ -528,7 +521,7 @@ function evaluateTicTacToePosition(position) {
         position[0][0] !== undefined
     ) {
         [
-            [result]
+            [result],
         ] = position;
     } else if (
         ((position[2][0] === position[2][1] &&

@@ -1,3 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable padded-blocks */
+/* eslint-disable space-infix-ops */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 /* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -30,7 +36,7 @@ function concatenateStrings(value1, value2) {
  * @return {number}
  *
  * @example
- *   'aaaaa' => 5 
+ *   'aaaaa' => 5
  *   'b'     => 1
  *   ''      => 0
  */
@@ -81,7 +87,7 @@ function extractNameFromTemplate(value) {
  *   'cat'       => 'c'
  */
 function getFirstChar(value) {
-     return value[0];
+    return value[0];
 }
 
 /**
@@ -112,10 +118,10 @@ function removeLeadingAndTrailingWhitespaces(value) {
  */
 function repeatString(value, count) {
     let str = '';
-    for (let i = 0; i < count; i++) {
-       str += value;
-  }
-  return str;
+    for (let i = 0; i < count; i += 1) {
+        str += value;
+    }
+    return str;
 }
 
 /**
@@ -146,7 +152,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-    const strArr = str.split('');
+    const charArr = str.split('');
     charArr.pop();
     charArr.shift();
     const rezult = charArr.join('');
@@ -213,30 +219,30 @@ function extractEmails(str) {
 function getRectangleString(width, height) {
     let figure = '';
 
-  for (let y = 0; y < height; y += 1) {
-    for (let x = 0; x < width; x += 1) {
-      if (x === 0 && y === 0) {
-        figure += '┌';
-      } else if (x === width - 1 && y === 0) {
-        figure += '┐\n';
-      } else if (y === 0) {
-        figure += '─';
-      } else if (x === 0 && y === height - 1) {
-        figure += '└';
-      } else if (x === width - 1 && y === height - 1) {
-        figure += '┘\n';
-      } else if (y === height - 1) {
-        figure += '─';
-      } else if (x === 0 && y > 0) {
-        figure += '│';
-      } else if (x === width - 1 && y > 0) {
-        figure += '│\n';
-      } else if (x > 0 && y > 0) {
-        figure += ' ';
-      }
+    for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+            if (x === 0 && y === 0) {
+                figure += '┌';
+            } else if (x === width - 1 && y === 0) {
+                figure += '┐\n';
+            } else if (y === 0) {
+                figure += '─';
+            } else if (x === 0 && y === height - 1) {
+                figure += '└';
+            } else if (x === width - 1 && y === height - 1) {
+                figure += '┘\n';
+            } else if (y === height - 1) {
+                figure += '─';
+            } else if (x === 0 && y > 0) {
+                figure += '│';
+            } else if (x === width - 1 && y > 0) {
+                figure += '│\n';
+            } else if (x > 0 && y > 0) {
+                figure += ' ';
+            }
+        }
     }
-  }
-  return figure;
+    return figure;
 }
 
 
@@ -259,24 +265,24 @@ function getRectangleString(width, height) {
 function encodeToRot13(str) {
     const BIG_LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const SMALL_LETTERS = 'abcdefghijklmnopqrstuvwxyz';
-    let result_str = '';
+    let resultStr = '';
 
-  str.split('').forEach((letter) => {
-    if (BIG_LETTERS.includes(letter)) {
-      const index = BIG_LETTERS.indexOf(letter);
-      const shift_char = (index + 13) % 26;
-      result_str += BIG_LETTERS[shift_char];
+    str.split('').forEach((letter) => {
+        if (BIG_LETTERS.includes(letter)) {
+            const index = BIG_LETTERS.indexOf(letter);
+            const shiftChar = (index + 13) % 26;
+            resultStr += BIG_LETTERS[shiftChar];
 
-    } else if (SMALL_LETTERS.includes(letter)) {
-      const index = SMALL_LETTERS.indexOf(letter);
-      const shift_char = (index + 13) % 26;
-      result += SMALL_LETTERS[shift_char];
-    } else {
-      result_str += letter;
-    }
-  });
+        } else if (SMALL_LETTERS.includes(letter)) {
+            const index = SMALL_LETTERS.indexOf(letter);
+            const shiftChar = (index + 13) % 26;
+            resultStr += SMALL_LETTERS[shiftChar];
+        } else {
+            resultStr += letter;
+        }
+    });
 
-  return result_str;
+    return resultStr;
 }
 
 /**
@@ -294,11 +300,11 @@ function encodeToRot13(str) {
  */
 function isString(value) {
 
-    //Оператор instanceof проверяет, принадлежит ли объект к определённому классу. 
-    //Другими словами, object instanceof constructor проверяет, 
-    //присутствует ли объект constructor.prototype в цепочке прототипов object.
-    
-    return value typeof value === 'string' || instanceof String;
+    // Оператор instanceof проверяет, принадлежит ли объект к определённому классу.
+    // Другими словами, object instanceof constructor проверяет,
+    // присутствует ли объект constructor.prototype в цепочке прототипов object.
+
+    return value instanceof String || typeof value === 'string';
 }
 
 
@@ -326,13 +332,13 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId = (value) => 
- ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
-  'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
-  'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
-  'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠'].indexOf(value);
+function getCardId(value) {
+    ['A♣', '2♣', '3♣', '4♣', '5♣', '6♣', '7♣', '8♣', '9♣', '10♣', 'J♣', 'Q♣', 'K♣',
+        'A♦', '2♦', '3♦', '4♦', '5♦', '6♦', '7♦', '8♦', '9♦', '10♦', 'J♦', 'Q♦', 'K♦',
+        'A♥', '2♥', '3♥', '4♥', '5♥', '6♥', '7♥', '8♥', '9♥', '10♥', 'J♥', 'Q♥', 'K♥',
+        'A♠', '2♠', '3♠', '4♠', '5♠', '6♠', '7♠', '8♠', '9♠', '10♠', 'J♠', 'Q♠', 'K♠',
+    ].indexOf(value);
 }
-
 
 module.exports = {
     concatenateStrings,

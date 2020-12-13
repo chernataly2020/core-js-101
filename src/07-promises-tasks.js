@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable padded-blocks */
+/* eslint-disable indent */
 /* ************************************************************************************************
  *                                                                                                *
  * Plese read the following tutorial before implementing tasks:                                   *
@@ -59,9 +62,9 @@ function willYouMarryMe(isPositiveAnswer) {
  */
 function processAllPromises(array) {
 
-    //Метод Promise.all(iterable) возвращает обещание,
-    //которое выполнится тогда, когда будут выполнены все обещания,
-    //переданные в виде перечисляемого аргумента, или отклонено любое из переданных обещаний.
+    // Метод Promise.all(iterable) возвращает обещание,
+    // которое выполнится тогда, когда будут выполнены все обещания,
+    // переданные в виде перечисляемого аргумента, или отклонено любое из переданных обещаний.
     return Promise.all(array);
 }
 

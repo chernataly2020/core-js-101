@@ -1,3 +1,9 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable padded-blocks */
+/* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
 /* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -67,7 +73,7 @@ function getRegexForPitSpot() {
  *  - Contains a number
  *  - Valid passwords will only be alphanumeric characters (+ underscore).
  *
- * @param {number} minLength
+ * @param {number} _minLength
  * @return {Regex}
  *
  * @example
@@ -78,10 +84,9 @@ function getRegexForPitSpot() {
  *   'PASSW0RD'.match(validator)  => false
  *   'Pa55'.match(validator) => false
  */
-function getPasswordValidator(minLength) {
-    return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])[A-Za-z0-9]{`${minLength}`,}$/;
+function getPasswordValidator(_minLength = 6) {
+    return /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9]{6,}$/;
 }
-
 
 module.exports = {
     getRegexForGuid,

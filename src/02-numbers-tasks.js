@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
+/* eslint-disable linebreak-style */
 /* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -20,10 +23,8 @@
  *   5, 5  => 25
  */
 function getRectangleArea(width, height) {
-  return width * height;
+    return width * height;
 }
-
-
 /**
  * Returns a circumference of circle given by radius.
  *
@@ -36,7 +37,7 @@ function getRectangleArea(width, height) {
  *   0    => 0
  */
 function getCicleCircumference(radius) {
-  return 2 * Math.PI * radius;
+    return 2 * Math.PI * radius;
 }
 
 /**
@@ -52,7 +53,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
-  return (value1 + value2) / 2;
+    return (value1 + value2) / 2;
 }
 
 /**
@@ -71,11 +72,11 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  const a = x1 - x2;
-  const b = y1 - y2;
+    const a = x1 - x2;
+    const b = y1 - y2;
 
-  const l = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
-  return l;
+    const l = Math.sqrt(a ** 2 + b ** 2);
+    return l;
 }
 
 /**
@@ -91,7 +92,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  return (0 - b) / a;
+    return (0 - b) / a;
 }
 
 
@@ -114,8 +115,8 @@ function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 function getAngleBetweenVectors(x1, y1, x2, y2) {
-  const angle = Math.atan2(y2, x2) - Math.atan2(y1, x1);
-  return Math.abs(angle);
+    const angle = Math.atan2(y2, x2) - Math.atan2(y1, x1);
+    return Math.abs(angle);
 }
 
 /**
@@ -131,7 +132,8 @@ function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 function getLastDigit(value) {
-  const arr = value.toString().split('').slice(-1).join('');
+    const arr = value.toString().split('').slice(-1).join('');
+    return arr;
 }
 
 
@@ -147,7 +149,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-  return Number(value);
+    return Number(value);
 }
 
 /**
@@ -164,7 +166,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a, b, c) {
-  return Math.sqrt((a * a) + (b * b) + (c * c));
+    return Math.sqrt((a * a) + (b * b) + (c * c));
 }
 
 /**
@@ -185,7 +187,7 @@ function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return 10 ** pow * Math.round(num / 10 ** pow);
+    return 10 ** pow * Math.round(num / 10 ** pow);
 }
 
 /**
@@ -206,10 +208,10 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  for (let i = 2; i < n; i += 1) {
-    if (n % i === 0) return false;
-  }
-  return n > 1;
+    for (let i = 2; i < n; i += 1) {
+        if (n % i === 0) return false;
+    }
+    return n > 1;
 }
 
 /**
@@ -228,20 +230,20 @@ function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 function toNumber(value, def) {
-  return (Number(value) ? Number(value) : def);
+    return (Number(value) ? Number(value) : def);
 }
 
 module.exports = {
-  getRectangleArea,
-  getCicleCircumference,
-  getAverage,
-  getDistanceBetweenPoints,
-  getLinearEquationRoot,
-  getAngleBetweenVectors,
-  getLastDigit,
-  parseNumberFromString,
-  getParallelipidedDiagonal,
-  roundToPowerOfTen,
-  isPrime,
-  toNumber,
+    getRectangleArea,
+    getCicleCircumference,
+    getAverage,
+    getDistanceBetweenPoints,
+    getLinearEquationRoot,
+    getAngleBetweenVectors,
+    getLastDigit,
+    parseNumberFromString,
+    getParallelipidedDiagonal,
+    roundToPowerOfTen,
+    isPrime,
+    toNumber,
 };

@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
 /* *******************************************************************************************
  *                                                                                           *
  * Plese read the following tutorial before implementing tasks:                              *
@@ -54,9 +58,7 @@ function parseDataFromIso8601(value) {
  *    Date(2015,1,1)    => false
  */
 function isLeapYear(date) {
-  return ((date.getFullYear() % 4 === 0)
-    && (date.getFullYear() % 100 !== 0))
-    || (date.getFullYear() % 400 === 0);
+    return ((date.getFullYear() % 4 === 0) && (date.getFullYear() % 100 !== 0)) || (date.getFullYear() % 400 === 0);
 }
 
 
@@ -76,30 +78,30 @@ function isLeapYear(date) {
  *    Date(2000,1,1,10,0,0),  Date(2000,1,1,15,20,10,453)   => "05:20:10.453"
  */
 function timeSpanToString(startDate, endDate) {
-  let milliSeconds = endDate.getMilliseconds() - startDate.getMilliseconds();
-  let seconds = endDate.getSeconds() - startDate.getSeconds();
-  let minutes = endDate.getMinutes() - startDate.getMinutes();
-  let hours = endDate.getHours() - startDate.getHours();
+    let milliSeconds = endDate.getMilliseconds() - startDate.getMilliseconds();
+    let seconds = endDate.getSeconds() - startDate.getSeconds();
+    let minutes = endDate.getMinutes() - startDate.getMinutes();
+    let hours = endDate.getHours() - startDate.getHours();
 
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
+    if (hours < 10) {
+        hours = `0${hours}`;
+    }
 
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
+    if (minutes < 10) {
+        minutes = `0${minutes}`;
+    }
 
-  if (seconds < 10) {
-    seconds = `0${seconds}`;
-  }
+    if (seconds < 10) {
+        seconds = `0${seconds}`;
+    }
 
-  if (milliSeconds < 10) {
-    milliSeconds = `00${milliSeconds}`;
-  } else if (milliSeconds < 100) {
-    milliSeconds = `0${milliSeconds}`;
-  }
+    if (milliSeconds < 10) {
+        milliSeconds = `00${milliSeconds}`;
+    } else if (milliSeconds < 100) {
+        milliSeconds = `0${milliSeconds}`;
+    }
 
-  return `${hours}:${minutes}:${seconds}.${milliSeconds}`;
+    return `${hours}:${minutes}:${seconds}.${milliSeconds}`;
 }
 
 
@@ -120,10 +122,10 @@ function timeSpanToString(startDate, endDate) {
  *    Date.UTC(2016,3,5,21, 0) => Math.PI/2
  */
 function angleBetweenClockHands(date) {
-    let minutes = date.getMinutes();
-    let hours = date.getHours();
-    let hAngle = 0.5 * (hours * 60 + minutes);
-    let mAngle = 6 * minutes;
+    const minutes = date.getMinutes();
+    const hours = date.getHours();
+    const hAngle = 0.5 * (hours * 60 + minutes);
+    const mAngle = 6 * minutes;
     let angle = Math.abs(hAngle - mAngle);
     angle = Math.min(angle, 360 - angle);
     return angle;
@@ -131,9 +133,9 @@ function angleBetweenClockHands(date) {
 
 
 module.exports = {
-  parseDataFromRfc2822,
-  parseDataFromIso8601,
-  isLeapYear,
-  timeSpanToString,
-  angleBetweenClockHands,
+    parseDataFromRfc2822,
+    parseDataFromIso8601,
+    isLeapYear,
+    timeSpanToString,
+    angleBetweenClockHands,
 };

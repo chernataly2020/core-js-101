@@ -1,3 +1,12 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable space-before-function-paren */
+/* eslint-disable linebreak-style */
+/* eslint-disable prefer-template */
+/* eslint-disable func-names */
+/* eslint-disable object-shorthand */
+/* eslint-disable max-len */
+/* eslint-disable linebreak-style */
+/* eslint-disable indent */
 /* ************************************************************************************************
  *                                                                                                *
  * Plese read the following tutorial before implementing tasks:                                   *
@@ -42,9 +51,9 @@ function Rectangle(width, height) {
  *    { width: 10, height : 20 } => '{"height":10,"width":20}'
  */
 function getJSON(obj) {
-    /*Метод JSON.stringify() преобразует значение JavaScript в строку JSON,
-    возможно с заменой значений, если указана функция замены,
-    или с включением только определённых свойств, если указан массив замены.*/
+    // Метод JSON.stringify() преобразует значение JavaScript в строку JSON,
+    // возможно с заменой значений, если указана функция замены,
+    // или с включением только определённых свойств, если указан массив замены. */
     return JSON.stringify(obj);
 }
 
@@ -61,19 +70,18 @@ function getJSON(obj) {
  *
  */
 function fromJSON(proto, json) {
-    //Метод JSON.parse() разбирает строку JSON,
-    //возможно с преобразованием получаемого в процессе разбора значения.
+    // Метод JSON.parse() разбирает строку JSON,
+    // возможно с преобразованием получаемого в процессе разбора значения.
     const obj = JSON.parse(json);
 
-    //Метод  Object.values() возвращает массив значений перечисляемых свойств объекта в том же порядке что и цикл for...in.
-    //Разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов.
+    // Метод  Object.values() возвращает массив значений перечисляемых свойств объекта в том же порядке что и цикл for...in.
+    // Разница между циклом и методом в том, что цикл перечисляет свойства и из цепочки прототипов.
     const values = Object.values(obj);
 
-    //Возвращает ссылку на функцию Object, создавшую прототип экземпляра.
-    //Все объекты наследуют свойство constructor из своего прототипа
+    // Возвращает ссылку на функцию Object, создавшую прототип экземпляра.
+    // Все объекты наследуют свойство constructor из своего прототипа
     return new proto.constructor(...values);
 }
-
 
 /**
  * Css selectors builder
@@ -134,9 +142,9 @@ const cssSelectorBuilder = {
     element: function(value) {
         this.error(1);
 
-        //Метод Object.create() создаёт новый объект с указанным прототипом и свойствами.
+        // Метод Object.create() создаёт новый объект с указанным прототипом и свойствами.
 
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 1;
         obj.answer = this.answer + value;
         return obj;
@@ -144,7 +152,7 @@ const cssSelectorBuilder = {
 
     id: function(value) {
         this.error(2);
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 2;
         obj.answer = this.answer + '#' + value;
         return obj;
@@ -152,7 +160,7 @@ const cssSelectorBuilder = {
 
     class: function(value) {
         this.error(3);
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 3;
         obj.answer = this.answer + '.' + value;
         return obj;
@@ -160,7 +168,7 @@ const cssSelectorBuilder = {
 
     attr: function(value) {
         this.error(4);
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 4;
         obj.answer = this.answer + '[' + value + ']';
         return obj;
@@ -168,7 +176,7 @@ const cssSelectorBuilder = {
 
     pseudoClass: function(value) {
         this.error(5);
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 5;
         obj.answer = this.answer + ':' + value;
         return obj;
@@ -176,14 +184,14 @@ const cssSelectorBuilder = {
 
     pseudoElement: function(value) {
         this.error(6);
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.i = 6;
         obj.answer = this.answer + '::' + value;
         return obj;
     },
 
     combine: function(selector1, combinator, selector2) {
-        let obj = Object.create(cssSelectorBuilder);
+        const obj = Object.create(cssSelectorBuilder);
         obj.answer = selector1.answer + ' ' + combinator + ' ' + selector2.answer;
         return obj;
     },
@@ -191,10 +199,10 @@ const cssSelectorBuilder = {
         return this.answer;
     },
 
-    //Обработка ошибок
-    error: function(nom_i) {
-        if (this.i > nom_i) throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
-        if (this.i == nom_i && (nom_i == 1 || nom_i == 2 || nom_i == 6)) throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
+    // Обработка ошибок
+    error: function(nomI) {
+        if (this.i > nomI) throw new Error('Selector parts should be arranged in the following order: element, id, class, attribute, pseudo-class, pseudo-element');
+        if (this.i === nomI && (nomI === 1 || nomI === 2 || nomI === 6)) throw new Error('Element, id and pseudo-element should not occur more then one time inside the selector');
     },
 };
 
@@ -205,4 +213,3 @@ module.exports = {
     fromJSON,
     cssSelectorBuilder,
 };
-
